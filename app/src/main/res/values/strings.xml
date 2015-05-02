@@ -8,4 +8,8 @@
     <string name="username_label">Username</string>
     <string name="password_label">Password</string>
     <string name="button_text">Login</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_enlist_host">EnlistHostActivity</string>
+    <string name="title_activity_enlist_vms">EnlistVMSActivity</string>
+    <string name="title_activity_health_monitor">HealthMonitorActivity</string>
 </resources>

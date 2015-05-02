@@ -38,10 +38,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        String DROP_TABLE_USERS = "DROP TABLE IF EXISTS " + TABLE_USERS;
+        db.execSQL(DROP_TABLE_USERS);
+
         String CREATE_DIRECTORIES_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_USERS + "("
                 + KEY_USERS_NAME + " TEXT PRIMARY KEY, "
-                + KEY_USERS_PASSWORD + " TEXT"
-                + KEY_USERS_ROLE + " TEXT" +")";
+                + KEY_USERS_PASSWORD + " TEXT, "
+                + KEY_USERS_ROLE + " TEXT" + ")";
         db.execSQL(CREATE_DIRECTORIES_TABLE);
     }
 
@@ -58,9 +61,9 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_USERS_NAME, users.getUserName());
-        values.put(KEY_USERS_PASSWORD, users.getPassword());
-        values.put(KEY_USERS_ROLE, users.getRole());
+        values.put(KEY_USERS_NAME, "\""+users.getUserName()+"\"");
+        values.put(KEY_USERS_PASSWORD, "\""+users.getPassword()+"\"");
+        values.put(KEY_USERS_ROLE, "\""+users.getRole()+"\"");
         // Inserting Row
         db.insert(TABLE_USERS, null, values);
         db.close(); // Closing database connection

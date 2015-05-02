@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-a7ae176f76f0c4027b7a6abbf19a623a8a04cb6c.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\classes-44c79b8222472b77de803c8262613795264757a5.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\classes-3a87527e93cce9b8707c5c380f7f3b6f02185152.jar" />
-    </item>
-    <item
-        jar="C:\Users\Sameer Ranade\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jar="C:\Users\Varun\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-fb369cfd8acbc93cfbba984da7f4da6d2e2dcd15.jar" />
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-be1f52e05e5c5952e3a0bf2056e9046fce4c86e4.jar" />
+    </item>
+    <item
+        jar="F:\283-Project\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\classes-9f9940e7e7f4aae1d9d8c9397a3a4822777900ad.jar" />
+    </item>
+    <item
+        jar="F:\283-Project\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\classes-c602ba3b9ca86a56bb94db45d9de81fe909acecd.jar" />
+    </item>
+    <item
+        jar="F:\283-Project\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-5f4bf8fff333f8ce46ae2579e176932dd6f3e4de.jar" />
     </item>
 
 </items>

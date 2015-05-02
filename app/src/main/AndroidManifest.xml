@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:name=".activity.EnlistHostActivity"
+            android:label="@string/title_activity_enlist_host" >
+        </activity>
+        <activity
+            android:name=".activity.EnlistVMSActivity"
+            android:label="@string/title_activity_enlist_vms" >
+        </activity>
+        <activity
+            android:name=".activity.HealthMonitorActivity"
+            android:label="@string/title_activity_health_monitor" >
+        </activity>
     </application>
 
 </manifest>
