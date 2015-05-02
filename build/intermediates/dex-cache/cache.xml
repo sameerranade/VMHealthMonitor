@@ -9,11 +9,46 @@
         <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-be1f52e05e5c5952e3a0bf2056e9046fce4c86e4.jar" />
     </item>
     <item
+        jar="C:\Users\Varun\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.3.2\c75edc740a6d8cb1cef6fa82fa594e0bce561916\jackson-databind-2.3.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c75edc740a6d8cb1cef6fa82fa594e0bce561916">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\jackson-databind-2.3.2-ebd4da937a34079026298cf38993094cc78e4c5b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Varun\.gradle\caches\modules-2\files-2.1\org.springframework.android\spring-android-core\1.0.1.RELEASE\e68f0e8e4b636ee30c4de58953be38d9b72a5e3b\spring-android-core-1.0.1.RELEASE.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e68f0e8e4b636ee30c4de58953be38d9b72a5e3b">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\spring-android-core-1.0.1.RELEASE-258a12c9d2973b9ca6f4868965d7fb98b0019908.jar" />
+    </item>
+    <item
         jar="F:\283-Project\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
         <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\classes-9f9940e7e7f4aae1d9d8c9397a3a4822777900ad.jar" />
+    </item>
+    <item
+        jar="C:\Users\Varun\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.3.2\559b70ac8a0d5cad611da4223137a920147201ba\jackson-core-2.3.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="559b70ac8a0d5cad611da4223137a920147201ba">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\jackson-core-2.3.2-59e5222dc8c2e38ca5a38896f865ae06df5a6f92.jar" />
+    </item>
+    <item
+        jar="C:\Users\Varun\.gradle\caches\modules-2\files-2.1\org.springframework.android\spring-android-rest-template\1.0.1.RELEASE\e132d929bd181941f79b0d63edafb8a86ae6fd33\spring-android-rest-template-1.0.1.RELEASE.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e132d929bd181941f79b0d63edafb8a86ae6fd33">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.1.RELEASE-6669fd11de5b9b73e68718cace3d46bc845deb23.jar" />
+    </item>
+    <item
+        jar="F:\283-Project\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-5f4bf8fff333f8ce46ae2579e176932dd6f3e4de.jar" />
     </item>
     <item
         jar="F:\283-Project\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\classes.jar"
@@ -23,11 +58,11 @@
         <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\classes-c602ba3b9ca86a56bb94db45d9de81fe909acecd.jar" />
     </item>
     <item
-        jar="F:\283-Project\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\libs\internal_impl-22.1.1.jar"
+        jar="C:\Users\Varun\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.3.0\f5e853a20b60758922453d56f9ae1e64af5cb3da\jackson-annotations-2.3.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-5f4bf8fff333f8ce46ae2579e176932dd6f3e4de.jar" />
+        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
+        <dex dex="F:\283-Project\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.3.0-ef001f10754acc6d310af7ebcea979b42da6f4fa.jar" />
     </item>
 
 </items>
