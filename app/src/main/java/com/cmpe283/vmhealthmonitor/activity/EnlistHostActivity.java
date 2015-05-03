@@ -8,11 +8,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cmpe283.vmhealthmonitor.R;
+import com.cmpe283.vmhealthmonitor.adapter.ListViewAdapter;
 import com.cmpe283.vmhealthmonitor.models.Host;
 
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -21,13 +25,25 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 
 public class EnlistHostActivity extends TabActivity {
-
+    ListView hostList;
+    ListViewAdapter listViewAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enlist_host);
         HttpRequestTask requestTask = new HttpRequestTask();
         requestTask.execute();
+        hostList = (ListView) findViewById(R.id.lv_host_list);
+        hostList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Host item = (Host) parent.getItemAtPosition(position);
+                Log.d("EnlistHostActivity","HostName: "+item.getName());
+                //Create intent
+                Toast.makeText(EnlistHostActivity.this,"Clicked on Item " + position + "Host Name " + item.getName(), Toast.LENGTH_SHORT ).show();
+
+            }
+        });
     }
 
 
@@ -75,11 +91,17 @@ public class EnlistHostActivity extends TabActivity {
         protected void onPostExecute(Host[] host) {
             //TextView greetingIdText = (TextView) findViewById(R.id.id_value);
             //TextView greetingContentText = (TextView) findViewById(R.id.content_value);
-
+            ArrayList<Host> hosts = new ArrayList<Host>();
             if(host != null){
                 Log.d("Host is :", host[0].getName());
                 Toast.makeText(EnlistHostActivity.this, "Host is " + host[1].getName(), Toast.LENGTH_SHORT).show();
                 Log.d("Host is :", String.valueOf(host[1].getId()));
+                for(Host h: host) {
+                    Log.d("EnlistHostActivity", h.toString());
+                    hosts.add(h);
+                }
+                listViewAdapter = new ListViewAdapter(EnlistHostActivity.this, R.layout.list_view_item, hosts);
+                hostList.setAdapter(listViewAdapter);
             }
             else
                 Log.d("Host is null", "");
