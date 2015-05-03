@@ -4,7 +4,7 @@
     android:id="@android:id/tabhost"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#000000"
+    android:background="#00aff0"
     tools:context="com.cmpe283.vmhealthmonitor.activity.EnlistHostActivity">
 
     <LinearLayout
@@ -16,27 +16,24 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#ffffff"
-            />
+        />
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            />
         <ListView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/lv_host_list"
             android:layout_margin="5dp"
+            android:background="#00aff0"
             android:padding="10dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="20.0sp"
             android:focusable="true"
             android:clickable="true"
-            android:background="#000000">
+        >
         </ListView>
-
     </LinearLayout>
 </TabHost>

@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,12 +27,14 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 
 public class EnlistVMSActivity extends Activity {
+
     ListView hostList;
     ListViewAdapterForVMs listViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_enlist_host);
+        setContentView(R.layout.activity_enlist_vms);
         HttpRequestTask requestTask = new HttpRequestTask();
         requestTask.execute();
         hostList = (ListView) findViewById(R.id.lv_host_list);
@@ -49,8 +52,8 @@ public class EnlistVMSActivity extends Activity {
 
                 // set dialog message
                 alertDialogBuilder
-                        .setMessage("Name " + item.getName() + "\nGuestOS" + item.getGuestOS()
-                                + "\nGusetOSState " + item.getGuestState() + "\nPowerStatus " + item.getPowerState())
+                        .setMessage(Html.fromHtml("<b>" + "Name: " + "</b>" + item.getName() + "<br/><b>" + "\nGuest OS: " + "</b>" + item.getGuestOS()
+                                + "<br/><b>" + "\nGuest OS State: " + "</b>" + item.getGuestState() + "<br/><b>" + "\nPower Status: " + "</b>" + item.getPowerState()))
                         .setCancelable(false)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
@@ -65,7 +68,6 @@ public class EnlistVMSActivity extends Activity {
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

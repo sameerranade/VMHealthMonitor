@@ -1,5 +1,7 @@
 package com.cmpe283.vmhealthmonitor.activity;
 
+import android.app.Activity;
+import android.app.TabActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,7 +9,7 @@ import android.view.MenuItem;
 
 import com.cmpe283.vmhealthmonitor.R;
 
-public class HealthMonitorActivity extends ActionBarActivity {
+public class HealthMonitorActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

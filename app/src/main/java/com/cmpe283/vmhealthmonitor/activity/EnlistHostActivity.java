@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,7 +43,7 @@ public class EnlistHostActivity extends TabActivity {
                 Host item = (Host) parent.getItemAtPosition(position);
                 Log.d("EnlistHostActivity","HostName: "+item.getName());
                 //Create intent
-                Toast.makeText(EnlistHostActivity.this,"Clicked on Item " + position + "Host Name " + item.getName(), Toast.LENGTH_SHORT ).show();
+
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(EnlistHostActivity.this);
 
                 // set title
@@ -50,8 +51,8 @@ public class EnlistHostActivity extends TabActivity {
 
                 // set dialog message
                 alertDialogBuilder
-                        .setMessage("Name "+ item.getName() + "\nIPAddress" + item.getIpAddr()
-                        + "\nProduct Name " + item.getProductFullName() + "\nOverAllStatus " + item.getOverAllStatus())
+                        .setMessage(Html.fromHtml("<b>" +"Name: "+ "</b>" + item.getName() + "<br/><b>"+ "\nIPAddress: " + "</b>" + item.getIpAddr()
+                        + "<br/><b>" + "\nProduct Name: " +"</b>" + item.getProductFullName() + "<br/><b>" + "\nOverAllStatus: " + "</b>" + item.getOverAllStatus()))
                         .setCancelable(false)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
@@ -66,7 +67,6 @@ public class EnlistHostActivity extends TabActivity {
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -126,9 +126,6 @@ public class EnlistHostActivity extends TabActivity {
             }
             else
                 Log.d("Host is null", "");
-            //greetingIdText.setText(String.valueOf(host.getId()));
-            //greetingContentText.setText(host.getName());
         }
-
     }
 }

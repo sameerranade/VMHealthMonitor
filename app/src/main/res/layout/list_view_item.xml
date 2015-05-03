@@ -6,12 +6,17 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        android:textAlignment="center"
         android:id="@+id/tv_host_name"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        android:textAlignment="center"
         android:id="@+id/tv_host_ip"
-        android:textColor="#ffffff"/>
+        android:textColor="#ffffff"
+        android:textSize="20sp"/>
 </LinearLayout>
