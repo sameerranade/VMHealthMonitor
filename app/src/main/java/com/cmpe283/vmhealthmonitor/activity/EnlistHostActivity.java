@@ -1,6 +1,8 @@
 package com.cmpe283.vmhealthmonitor.activity;
 
+import android.app.AlertDialog;
 import android.app.TabActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
@@ -41,7 +43,26 @@ public class EnlistHostActivity extends TabActivity {
                 Log.d("EnlistHostActivity","HostName: "+item.getName());
                 //Create intent
                 Toast.makeText(EnlistHostActivity.this,"Clicked on Item " + position + "Host Name " + item.getName(), Toast.LENGTH_SHORT ).show();
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(EnlistHostActivity.this);
 
+                // set title
+                alertDialogBuilder.setTitle("Host Info");
+
+                // set dialog message
+                alertDialogBuilder
+                        .setMessage("Name "+ item.getName() + "\nIPAddress" + item.getIpAddr()
+                        + "\nProduct Name " + item.getProductFullName() + "\nOverAllStatus " + item.getOverAllStatus())
+                        .setCancelable(false)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,int id) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                // show it
+                alertDialog.show();
             }
         });
     }
