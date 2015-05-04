@@ -13,4 +13,5 @@
     <string name="title_activity_enlist_vms">EnlistVMSActivity</string>
     <string name="title_activity_health_monitor">HealthMonitorActivity</string>
     <string name="title_activity_view_host">ViewHostActivity</string>
+    <string name="title_activity_vminfo">VMInfoActivity</string>
 </resources>

@@ -26,15 +26,18 @@ public class HealthMonitorActivity extends Activity {
 
     TextView xAxisLabel;
     TextView yAxisLabel;
+    String vmName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_monitor);
         xAxisLabel = (TextView) findViewById(R.id.textView5);
         yAxisLabel = (TextView) findViewById(R.id.textView6);
+        vmName = getIntent().getStringExtra("VMName");
+        Log.d("VMName",vmName);
+
         new HttpRequestTask().execute();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,7 +65,7 @@ public class HealthMonitorActivity extends Activity {
         @Override
         protected HashMap<String, Object> doInBackground(Void... params) {
             try {
-                final String url = "http://52.8.70.178:8080/vm/vm2-team6/start/2015-05-03T14:00:00Z/end/2015-05-03T15:00:00Z";
+                final String url = "http://52.8.70.178:8080/vm/"+vmName+"/start/2015-05-03T14:00:00Z/end/2015-05-03T15:00:00Z";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 

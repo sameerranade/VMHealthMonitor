@@ -35,7 +35,7 @@ public class EnlistHostActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enlist_host);
         HttpRequestTask requestTask = new HttpRequestTask();
-        //requestTask.execute();
+        requestTask.execute();
         hostList = (ListView) findViewById(R.id.lv_host_list);
 
         hostList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -95,7 +95,7 @@ public class EnlistHostActivity extends TabActivity {
         @Override
         protected Host[] doInBackground(Void... params) {
             try {
-                final String url = "http://10.189.217.28:8080/hosts";
+                final String url = "http://192.168.0.7:8080/hosts";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Host[] hosts = restTemplate.getForObject(url, Host[].class);

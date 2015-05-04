@@ -3,6 +3,7 @@ package com.cmpe283.vmhealthmonitor.activity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -36,7 +37,7 @@ public class EnlistVMSActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enlist_vms);
         HttpRequestTask requestTask = new HttpRequestTask();
-        //requestTask.execute();
+        requestTask.execute();
         hostList = (ListView) findViewById(R.id.lv_host_list);
         hostList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -45,7 +46,23 @@ public class EnlistVMSActivity extends Activity {
                 Log.d("EnlistVMSActivity", "VMName: " + item.getName());
                 //Create intent
                 Toast.makeText(EnlistVMSActivity.this, "Clicked on Item " + position + "VM Name " + item.getName(), Toast.LENGTH_SHORT).show();
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(EnlistVMSActivity.this);
+
+                Bundle vmBundle = new Bundle();
+                vmBundle.putString("VMName", item.getName());
+                vmBundle.putString("HostName", item.getHostName());
+                vmBundle.putString("GuestOS", item.getGuestOS());
+                vmBundle.putString("GuestState", item.getGuestState());
+                vmBundle.putString("PowerState", item.getPowerState());
+                vmBundle.putString("GuestCPUUsage", item.getGuestCPUUsage());
+                vmBundle.putString("HostMemoryUsage", item.getHostMemoryUsage());
+                vmBundle.putString("GuestMemoryUsage", item.getGuestMemoryUsage());
+                vmBundle.putString("GuestUptime", item.getGuestUpTime());
+
+                Intent intent = new Intent(EnlistVMSActivity.this,VMInfoActivity.class);
+                intent.putExtras(vmBundle);
+                startActivity(intent);
+
+                /*AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(EnlistVMSActivity.this);
 
                 // set title
                 alertDialogBuilder.setTitle("VM Info");
@@ -64,7 +81,7 @@ public class EnlistVMSActivity extends Activity {
                 // create alert dialog
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 // show it
-                alertDialog.show();
+                alertDialog.show();*/
             }
         });
     }

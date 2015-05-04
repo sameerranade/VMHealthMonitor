@@ -38,6 +38,10 @@
             android:name=".activity.ViewHostActivity"
             android:label="@string/title_activity_view_host" >
         </activity>
+        <activity
+            android:name=".activity.VMInfoActivity"
+            android:label="@string/title_activity_vminfo" >
+        </activity>
     </application>
 
 </manifest>

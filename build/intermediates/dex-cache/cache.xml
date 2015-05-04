@@ -30,13 +30,6 @@
         <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\classes-3a87527e93cce9b8707c5c380f7f3b6f02185152.jar" />
     </item>
     <item
-        jar="C:\Users\Sameer Ranade\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-fb369cfd8acbc93cfbba984da7f4da6d2e2dcd15.jar" />
-    </item>
-    <item
         jar="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -51,18 +44,25 @@
         <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\jackson-core-2.3.2-6ce23843288e1b429b3b33981c66dc98c95f4df2.jar" />
     </item>
     <item
-        jar="C:\Users\Sameer Ranade\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.3.0\f5e853a20b60758922453d56f9ae1e64af5cb3da\jackson-annotations-2.3.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
-        <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.3.0-348402b5a4f17e625ce6565a73fcc2bbfa4ee799.jar" />
-    </item>
-    <item
         jar="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\exploded-aar\com.jjoe64\graphview\4.0.1\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
         <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\classes-f9b4f7cfb8d986eb1bb6bd2c3df53ec458a917c5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sameer Ranade\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-fb369cfd8acbc93cfbba984da7f4da6d2e2dcd15.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sameer Ranade\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.3.0\f5e853a20b60758922453d56f9ae1e64af5cb3da\jackson-annotations-2.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
+        <dex dex="C:\Users\Sameer Ranade\Documents\GitHub\VMHealthMonitor\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.3.0-348402b5a4f17e625ce6565a73fcc2bbfa4ee799.jar" />
     </item>
     <item
         jar="C:\Users\Sameer Ranade\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.3.2\c75edc740a6d8cb1cef6fa82fa594e0bce561916\jackson-databind-2.3.2.jar"

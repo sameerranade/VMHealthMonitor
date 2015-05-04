@@ -34,15 +34,17 @@ public class HomeActivity extends TabActivity {
                 .setContent(intentUpload);
 
         // Share Tab
+/*
         Intent intentSharedImages = new Intent().setClass(this, HealthMonitorActivity.class);
         TabHost.TabSpec tabSpecSharedImages = tabHost
                 .newTabSpec("Health Monitor")
                 .setIndicator("Health Monitor")
                 .setContent(intentSharedImages);
+*/
 
         tabHost.addTab(tabSpecGallery);
         tabHost.addTab(tabSpecUploadImage);
-        tabHost.addTab(tabSpecSharedImages);
+//        tabHost.addTab(tabSpecSharedImages);
         tabHost.setCurrentTab(0);
     }
 
