@@ -35,7 +35,7 @@ public class EnlistHostActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enlist_host);
         HttpRequestTask requestTask = new HttpRequestTask();
-        requestTask.execute();
+        //requestTask.execute();
         hostList = (ListView) findViewById(R.id.lv_host_list);
         hostList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

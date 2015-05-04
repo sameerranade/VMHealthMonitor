@@ -36,7 +36,7 @@ public class EnlistVMSActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enlist_vms);
         HttpRequestTask requestTask = new HttpRequestTask();
-        requestTask.execute();
+        //requestTask.execute();
         hostList = (ListView) findViewById(R.id.lv_host_list);
         hostList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
