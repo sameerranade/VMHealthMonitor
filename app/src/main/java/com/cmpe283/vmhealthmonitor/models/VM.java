@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Created by Varun on 5/2/2015.
  */
 public class VM {
+
     @JsonProperty
     private String name;
 
@@ -17,6 +18,21 @@ public class VM {
 
     @JsonProperty
     private String powerState;
+
+    @JsonProperty
+    private String hostName;
+
+    @JsonProperty
+    private String hostMemoryUsage;
+
+    @JsonProperty
+    private String guestMemoryUsage;
+
+    @JsonProperty
+    private String guestCPUUsage;
+
+    @JsonProperty
+    private String guestUpTime;
 
     public VM(){
 
@@ -60,5 +76,55 @@ public class VM {
     @JsonProperty("powerState")
     public void setPowerState(String powerState) {
         this.powerState = powerState;
+    }
+
+    @JsonProperty("hostName")
+    public String getHostName() {
+        return hostName;
+    }
+
+    @JsonProperty("hostName")
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
+    @JsonProperty("hostMemoryUsage")
+    public String getHostMemoryUsage() {
+        return hostMemoryUsage;
+    }
+
+    @JsonProperty("hostMemoryUsage")
+    public void setHostMemoryUsage(String hostMemoryUsage) {
+        this.hostMemoryUsage = hostMemoryUsage;
+    }
+
+    @JsonProperty("guestMemoryUsage")
+    public String getGuestMemoryUsage() {
+        return guestMemoryUsage;
+    }
+
+    @JsonProperty("guestMemoryUsage")
+    public void setGuestMemoryUsage(String guestMemoryUsage) {
+        this.guestMemoryUsage = guestMemoryUsage;
+    }
+
+    @JsonProperty("guestCPUUsage")
+    public String getGuestCPUUsage() {
+        return guestCPUUsage;
+    }
+
+    @JsonProperty("guestCPUUsage")
+    public void setGuestCPUUsage(String guestCPUUsage) {
+        this.guestCPUUsage = guestCPUUsage;
+    }
+
+    @JsonProperty("guestUpTime")
+    public String getGuestUpTime() {
+        return guestUpTime;
+    }
+
+    @JsonProperty("guestUpTime")
+    public void setGuestUpTime(String guestUpTime) {
+        this.guestUpTime = guestUpTime;
     }
 }
