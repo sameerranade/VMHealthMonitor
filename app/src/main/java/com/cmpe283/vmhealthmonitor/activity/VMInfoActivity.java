@@ -1,16 +1,27 @@
 package com.cmpe283.vmhealthmonitor.activity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cmpe283.vmhealthmonitor.R;
+import com.cmpe283.vmhealthmonitor.adapter.ListViewAdapterForVMs;
+import com.cmpe283.vmhealthmonitor.models.VM;
+import com.cmpe283.vmhealthmonitor.models.VMTask;
+
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.ArrayList;
 
 public class VMInfoActivity extends ActionBarActivity {
 
@@ -65,6 +76,33 @@ public class VMInfoActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+
+        playBtn = (ImageButton) findViewById(R.id.imageButton);
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    String url = "http://192.168.0.7:8080/vms/startVM/"+vmBundle.getString("VMName");
+                    new HttpRequestTask().execute(url);
+            }
+        });
+
+        pauseBtn = (ImageButton) findViewById(R.id.imageButton2);
+        pauseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "http://192.168.0.7:8080/vms/pauseVM/"+vmBundle.getString("VMName");
+                new HttpRequestTask().execute(url);
+            }
+        });
+
+        stopBtn = (ImageButton) findViewById(R.id.imageButton3);
+        stopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "http://192.168.0.7:8080/vms/stopVM/"+vmBundle.getString("VMName");
+                new HttpRequestTask().execute(url);
+            }
+        });
     }
 
     @Override
@@ -87,5 +125,36 @@ public class VMInfoActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private class HttpRequestTask extends AsyncTask<String, Void, VMTask> {
+        @Override
+        protected VMTask doInBackground(String... url) {
+            try {
+                //final String url = "http://192.168.0.7:8080/vms";
+                RestTemplate restTemplate = new RestTemplate();
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+
+
+                VMTask vmTask = restTemplate.getForObject(url[0], VMTask.class);
+
+                System.out.println("Hello");
+                return vmTask;
+            } catch (Exception e) {
+                Log.e("MainActivity", e.getMessage(), e);
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(VMTask vmTask) {
+
+            if(vmTask != null){
+                Toast.makeText(VMInfoActivity.this, "VM "+vmTask.getVmName()+" "+ vmTask.getVmTask() + " operation "+ vmTask.getVmTaskStatus(), Toast.LENGTH_SHORT).show();
+            }
+            else
+                Log.d("Host is null", "");
+        }
     }
 }

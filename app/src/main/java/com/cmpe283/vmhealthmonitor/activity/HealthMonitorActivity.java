@@ -1,6 +1,7 @@
 package com.cmpe283.vmhealthmonitor.activity;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -110,6 +111,10 @@ public class HealthMonitorActivity extends Activity {
 
                     graph.addSeries(cpuUsageSeries);
                     graph.setVisibility(View.VISIBLE);
+
+                    cpuUsageSeries.setColor(Color.WHITE);
+                    cpuUsageSeries.setDrawDataPoints(true);
+
                     yAxisLabel.setText("CPU\nUsage");
                     xAxisLabel.setText("Time");
                 }
@@ -131,6 +136,10 @@ public class HealthMonitorActivity extends Activity {
 
                     graph.addSeries(memoryUsageSeries);
                     graph.setVisibility(View.VISIBLE);
+
+                    memoryUsageSeries.setColor(Color.WHITE);
+                    memoryUsageSeries.setDrawDataPoints(true);
+
                     yAxisLabel.setText("Mem\nUsage");
                     xAxisLabel.setText("Time");
                 }
@@ -152,6 +161,10 @@ public class HealthMonitorActivity extends Activity {
 
                     graph.addSeries(diskUsageSeries );
                     graph.setVisibility(View.VISIBLE);
+
+                    diskUsageSeries.setColor(Color.WHITE);
+                    diskUsageSeries.setDrawDataPoints(true);
+
                     yAxisLabel.setText("Disk\nUsage");
                     xAxisLabel.setText("Time");
                 }
@@ -174,6 +187,10 @@ public class HealthMonitorActivity extends Activity {
 
                     graph.addSeries(networkUsageSeries);
                     graph.setVisibility(View.VISIBLE);
+
+                    networkUsageSeries.setColor(Color.WHITE);
+                    networkUsageSeries.setDrawDataPoints(true);
+
                     yAxisLabel.setText("N"+"\\"+ "W"+"\nUsage");
                     xAxisLabel.setText("Time");
                 }

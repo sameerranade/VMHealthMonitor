@@ -108,6 +108,13 @@ public class EnlistVMSActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        HttpRequestTask requestTask = new HttpRequestTask();
+        requestTask.execute();
+    }
+
     private class HttpRequestTask extends AsyncTask<Void, Void, VM[]> {
         @Override
         protected VM[] doInBackground(Void... params) {
