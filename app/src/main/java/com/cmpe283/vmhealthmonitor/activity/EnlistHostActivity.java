@@ -95,7 +95,7 @@ public class EnlistHostActivity extends TabActivity {
         @Override
         protected Host[] doInBackground(Void... params) {
             try {
-                final String url = "http://192.168.0.7:8080/hosts";
+                final String url = "http://52.8.70.178:8080/hosts";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 Host[] hosts = restTemplate.getForObject(url, Host[].class);

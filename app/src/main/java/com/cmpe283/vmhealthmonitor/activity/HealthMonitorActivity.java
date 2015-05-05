@@ -113,9 +113,9 @@ public class HealthMonitorActivity extends Activity {
                     graph.setVisibility(View.VISIBLE);
 
                     cpuUsageSeries.setColor(Color.WHITE);
-                    cpuUsageSeries.setDrawDataPoints(true);
+                    //cpuUsageSeries.setDrawDataPoints(true);
 
-                    yAxisLabel.setText("CPU\nUsage");
+                    yAxisLabel.setText("CPU\nUsage\n%");
                     xAxisLabel.setText("Time");
                 }
             });
@@ -138,9 +138,9 @@ public class HealthMonitorActivity extends Activity {
                     graph.setVisibility(View.VISIBLE);
 
                     memoryUsageSeries.setColor(Color.WHITE);
-                    memoryUsageSeries.setDrawDataPoints(true);
+                    //memoryUsageSeries.setDrawDataPoints(true);
 
-                    yAxisLabel.setText("Mem\nUsage");
+                    yAxisLabel.setText("Mem\nUsage\nMB");
                     xAxisLabel.setText("Time");
                 }
             });
@@ -163,9 +163,9 @@ public class HealthMonitorActivity extends Activity {
                     graph.setVisibility(View.VISIBLE);
 
                     diskUsageSeries.setColor(Color.WHITE);
-                    diskUsageSeries.setDrawDataPoints(true);
+                    //diskUsageSeries.setDrawDataPoints(true);
 
-                    yAxisLabel.setText("Disk\nUsage");
+                    yAxisLabel.setText("Disk\nUsage\nKBps");
                     xAxisLabel.setText("Time");
                 }
             });
@@ -189,9 +189,9 @@ public class HealthMonitorActivity extends Activity {
                     graph.setVisibility(View.VISIBLE);
 
                     networkUsageSeries.setColor(Color.WHITE);
-                    networkUsageSeries.setDrawDataPoints(true);
+                    //networkUsageSeries.setDrawDataPoints(true);
 
-                    yAxisLabel.setText("N"+"\\"+ "W"+"\nUsage");
+                    yAxisLabel.setText("N"+"\\"+ "W"+"\nUsage\nMBps");
                     xAxisLabel.setText("Time");
                 }
             });

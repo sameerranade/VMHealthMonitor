@@ -81,7 +81,7 @@ public class VMInfoActivity extends ActionBarActivity {
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    String url = "http://192.168.0.7:8080/vms/startVM/"+vmBundle.getString("VMName");
+                    String url = "http://52.8.70.178:8080/vms/startVM/"+vmBundle.getString("VMName");
                     new HttpRequestTask().execute(url);
             }
         });
@@ -90,7 +90,7 @@ public class VMInfoActivity extends ActionBarActivity {
         pauseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "http://192.168.0.7:8080/vms/pauseVM/"+vmBundle.getString("VMName");
+                String url = "http://52.8.70.178:8080/vms/pauseVM/"+vmBundle.getString("VMName");
                 new HttpRequestTask().execute(url);
             }
         });
@@ -99,7 +99,7 @@ public class VMInfoActivity extends ActionBarActivity {
         stopBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "http://192.168.0.7:8080/vms/stopVM/"+vmBundle.getString("VMName");
+                String url = "http://52.8.70.178:8080/vms/stopVM/"+vmBundle.getString("VMName");
                 new HttpRequestTask().execute(url);
             }
         });

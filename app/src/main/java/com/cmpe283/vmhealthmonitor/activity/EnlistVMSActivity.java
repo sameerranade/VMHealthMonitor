@@ -2,6 +2,7 @@ package com.cmpe283.vmhealthmonitor.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -31,11 +32,13 @@ public class EnlistVMSActivity extends Activity {
 
     ListView hostList;
     ListViewAdapterForVMs listViewAdapter;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enlist_vms);
+        progressDialog = new ProgressDialog(EnlistVMSActivity.this);
         HttpRequestTask requestTask = new HttpRequestTask();
         requestTask.execute();
         hostList = (ListView) findViewById(R.id.lv_host_list);
@@ -112,19 +115,26 @@ public class EnlistVMSActivity extends Activity {
     protected void onResume(){
         super.onResume();
         HttpRequestTask requestTask = new HttpRequestTask();
-        requestTask.execute();
+        //requestTask.execute();
     }
 
     private class HttpRequestTask extends AsyncTask<Void, Void, VM[]> {
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog.setMessage("Fetching VM List...");
+            progressDialog.show();
+        }
+        @Override
         protected VM[] doInBackground(Void... params) {
             try {
-                final String url = "http://192.168.0.7:8080/vms";
+                final String url = "http://52.8.70.178:8080/vms";
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
                 VM[] vms = restTemplate.getForObject(url, VM[].class);
 
                 System.out.println("Hello");
+                progressDialog.dismiss();
                 return vms;
             } catch (Exception e) {
                 Log.e("MainActivity", e.getMessage(), e);
@@ -135,7 +145,10 @@ public class EnlistVMSActivity extends Activity {
 
         @Override
         protected void onPostExecute(VM[] vms) {
-            //TextView greetingIdText = (TextView) findViewById(R.id.id_value);
+            progressDialog.dismiss();
+            progressDialog.cancel();
+            //progressDialog = null;
+                //TextView greetingIdText = (TextView) findViewById(R.id.id_value);
             //TextView greetingContentText = (TextView) findViewById(R.id.content_value);
             ArrayList<VM> vmList = new ArrayList<VM>();
             if(vms != null){
