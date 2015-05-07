@@ -20,7 +20,10 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class HealthMonitorActivity extends Activity {
@@ -28,6 +31,8 @@ public class HealthMonitorActivity extends Activity {
     TextView xAxisLabel;
     TextView yAxisLabel;
     String vmName;
+    String endTime;
+    String startTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +40,13 @@ public class HealthMonitorActivity extends Activity {
         xAxisLabel = (TextView) findViewById(R.id.textView5);
         yAxisLabel = (TextView) findViewById(R.id.textView6);
         vmName = getIntent().getStringExtra("VMName");
-        Log.d("VMName",vmName);
-
+        Log.d("VMName", vmName);
+        Calendar now = Calendar.getInstance();
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        endTime = df.format(Calendar.getInstance().getTime());
+        now.add(Calendar.HOUR, -1);
+        startTime = df.format(now.getTime());
+        System.out.println("Start Time " + startTime + " End Time "+ endTime);
         new HttpRequestTask().execute();
     }
 
@@ -66,7 +76,7 @@ public class HealthMonitorActivity extends Activity {
         @Override
         protected HashMap<String, Object> doInBackground(Void... params) {
             try {
-                final String url = "http://52.8.70.178:8080/vm/"+vmName+"/start/2015-05-03T14:00:00Z/end/2015-05-03T15:00:00Z";
+                final String url = "http://52.8.70.178:8080/vm/"+vmName+"/start/"+startTime+"/end/"+endTime;
                 RestTemplate restTemplate = new RestTemplate();
                 restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 
