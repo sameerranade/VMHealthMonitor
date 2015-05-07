@@ -151,7 +151,7 @@ public class VMInfoActivity extends ActionBarActivity {
         protected void onPostExecute(VMTask vmTask) {
 
             if(vmTask != null){
-                Toast.makeText(VMInfoActivity.this, "VM "+vmTask.getVmName()+" "+ vmTask.getVmTask() + " operation "+ vmTask.getVmTaskStatus(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(VMInfoActivity.this, "VM "+vmTask.getVmName()+" "+ vmTask.getVmTask() + " operation "+ vmTask.getVmTaskStatus(), Toast.LENGTH_SHORT).show();
             }
             else
                 Log.d("Host is null", "");

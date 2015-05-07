@@ -94,7 +94,7 @@ public class HealthMonitorActivity extends Activity {
         @Override
         protected void onPostExecute(HashMap<String, Object> stats) {
 
-            Toast.makeText(HealthMonitorActivity.this, "Hashmap Printing", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(HealthMonitorActivity.this, "Hashmap Printing", Toast.LENGTH_SHORT).show();
             Log.d("HealthMonitorActivity", stats.toString());
 
             final ArrayList<Integer> cpuUsage = (ArrayList<Integer>) stats.get("cpu.usage.average");

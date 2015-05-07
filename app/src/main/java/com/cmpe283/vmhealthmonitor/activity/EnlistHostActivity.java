@@ -41,7 +41,7 @@ public class EnlistHostActivity extends TabActivity {
         hostList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Host item = (Host) parent.getItemAtPosition(position);
+                final Host item = (Host) parent.getItemAtPosition(position);
                 Log.d("EnlistHostActivity","HostName: "+item.getName());
                 //Create intent
 
@@ -58,6 +58,14 @@ public class EnlistHostActivity extends TabActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 dialog.dismiss();
+                            }
+                        })
+                        .setNeutralButton("Show Graphs", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(EnlistHostActivity.this, HealthMonitorActivity.class);
+                                intent.putExtra("VMName",item.getIpAddr());
+                                startActivity(intent);
                             }
                         });
 
@@ -116,7 +124,7 @@ public class EnlistHostActivity extends TabActivity {
             ArrayList<Host> hosts = new ArrayList<Host>();
             if(host != null){
                 Log.d("Host is :", host[0].getName());
-                Toast.makeText(EnlistHostActivity.this, "Host is " + host[1].getName(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EnlistHostActivity.this, "Host is " + host[1].getName(), Toast.LENGTH_SHORT).show();
                 Log.d("Host is :", String.valueOf(host[1].getId()));
                 for(Host h: host) {
                     Log.d("EnlistHostActivity", h.toString());

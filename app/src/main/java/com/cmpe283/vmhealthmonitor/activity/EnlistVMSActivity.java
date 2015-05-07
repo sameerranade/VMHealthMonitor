@@ -48,7 +48,7 @@ public class EnlistVMSActivity extends Activity {
                 VM item = (VM) parent.getItemAtPosition(position);
                 Log.d("EnlistVMSActivity", "VMName: " + item.getName());
                 //Create intent
-                Toast.makeText(EnlistVMSActivity.this, "Clicked on Item " + position + "VM Name " + item.getName(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(EnlistVMSActivity.this, "Clicked on Item " + position + "VM Name " + item.getName(), Toast.LENGTH_SHORT).show();
 
                 Bundle vmBundle = new Bundle();
                 vmBundle.putString("VMName", item.getName());
@@ -153,7 +153,7 @@ public class EnlistVMSActivity extends Activity {
             ArrayList<VM> vmList = new ArrayList<VM>();
             if(vms != null){
                 Log.d("VM is :", vms[0].getName());
-                Toast.makeText(EnlistVMSActivity.this, "VM is " + vms[1].getName(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(EnlistVMSActivity.this, "VM is " + vms[1].getName(), Toast.LENGTH_SHORT).show();
                 Log.d("Host is :", String.valueOf(vms[1].getName()));
                 for(VM vm: vms) {
                     Log.d("EnlistVMSActivity", vm.toString());
